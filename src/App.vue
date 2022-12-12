@@ -24,11 +24,14 @@
 
 <script>
 import Options from "./components/Options.vue";
+import * as data from "../public/questions.json";
 export default {
   name: "App",
+
   components: {
     Options,
   },
+
   methods: {
     handleClick(correct) {
       if (correct) {
@@ -40,6 +43,7 @@ export default {
       }
     }
   },
+
   data() {
     return {
       questions: [],
@@ -48,44 +52,28 @@ export default {
       score: 0,
     };
   },
+
   created() {
-    this.questions = [
-      {
-        question: "What is 2 + 2?",
-        answers: [
-          { id: 1, text: "4", correct: true },
-          { id: 2, text: "22", correct: false },
-        ],
-      },
-      {
-        question: "What is 3 * 3?",
-        answers: [
-          { id: 3, text: "9", correct: true },
-          { id: 4, text: "33", correct: false },
-        ],
-      },
-    ];
+    this.questions = data;
   },
 };
 </script>
 
 <style>
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
-    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
 * {
   font-family: "Verdana", cursive, sans-serif;
   color: #ffffff;
+
 }
 
 body {
-  background-color: #7cc6fe;
+  margin: 0;
+  padding: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  user-select: none;
+
+  background-color: #222;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -93,15 +81,30 @@ body {
 }
 
 .container {
-  background-color: #252d4a;
+  background-color: #567;
   width: 450px;
   min-height: 200px;
   height: min-content;
   border-radius: 15px;
   padding: 20px;
-  box-shadow: 10px 10px 42px 0px rgba(0, 0, 0, 0.75);
+  box-shadow: 10px 10px 42px 0px rgba(0, 68, 255, 0.8);
   display: flex;
   justify-content: space-evenly;
+  animation: yt-effect 6s ease-in-out infinite;
+}
+
+@keyframes yt-effect {
+  0% {
+    box-shadow: 0px 0px 25px rgba(0, 68, 255, 0.8);
+  }
+
+  50% {
+    box-shadow: 0px 0px 200px rgba(0, 68, 255, 0.8);
+  }
+
+  100% {
+    box-shadow: 0px 0px 25px rgba(0, 68, 255, 0.8);
+  }
 }
 
 .score-section {
@@ -110,7 +113,6 @@ body {
   align-items: center;
 }
 
-/* QUESTION/TIMER/LEFT SECTION */
 .question-section {
   width: 100%;
   position: relative;
@@ -128,55 +130,10 @@ body {
   margin-bottom: 12px;
 }
 
-.timer-text {
-  background: rgb(230, 153, 12);
-  padding: 15px;
-  margin-top: 20px;
-  margin-right: 20px;
-  border: 5px solid rgb(255, 189, 67);
-  border-radius: 15px;
-  text-align: center;
-}
-
-/* ANSWERS/RIGHT SECTION */
 .answer-section {
   width: 100%;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-}
-
-button {
-  width: 100%;
-  font-size: 16px;
-  color: #ffffff;
-  background-color: #252d4a;
-  border-radius: 15px;
-  display: flex;
-  padding: 5px;
-  justify-content: flex-start;
-  align-items: center;
-  border: 5px solid #234668;
-  cursor: pointer;
-}
-
-.correct {
-  background-color: #2f922f;
-}
-
-.incorrect {
-  background-color: #ff3333;
-}
-
-button:hover {
-  background-color: #555e7d;
-}
-
-button:focus {
-  outline: none;
-}
-
-button svg {
-  margin-right: 5px;
 }
 </style>
