@@ -1,0 +1,77 @@
+[
+    {
+        "question": "Does raze nades bounce off Reyna's Leer?",
+        "answers": [
+            {
+                "id": 1,
+                "text": "Yes",
+                "correct": false
+            },
+            {
+                "id": 2,
+                "text": "No",
+                "correct": true
+            }
+        ]
+    },
+    {
+        "question": "Which molly does more damage?",
+        "answers": [
+            {
+                "id": 1,
+                "text": "Brimstone's",
+                "correct": true
+            },
+            {
+                "id": 2,
+                "text": "Killjoy's",
+                "correct": false
+            }
+        ]
+    },
+    {
+        "question": "How long did Jett's smoke last in BETA?",
+        "answers": [
+            {
+                "id": 1,
+                "text": "4s",
+                "correct": true
+            },
+            {
+                "id": 2,
+                "text": "7s",
+                "correct": false
+            }
+        ]
+    },
+    {
+        "question": "How long does Your's gatecrash last?",
+        "answers": [
+            {
+                "id": 1,
+                "text": "20s",
+                "correct": true
+            },
+            {
+                "id": 2,
+                "text": "25s",
+                "correct": false
+            }
+        ]
+    },
+    {
+        "question": "Vandal's spray become random after ___ bullets?",
+        "answers": [
+            {
+                "id": 1,
+                "text": "7",
+                "correct": true
+            },
+            {
+                "id": 2,
+                "text": "10",
+                "correct": false
+            }
+        ]
+    }
+]
